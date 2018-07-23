@@ -1,0 +1,101 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/bluePrimary</item>
+        <item name="colorPrimaryDark">@color/bluePrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="SplashScreen" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="RedTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/redPrimary</item>
+        <item name="colorPrimaryDark">@color/redPrimaryDark</item>
+        <item name="colorAccent">@color/redPrimary</item>
+    </style>
+    <style name="BlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/bluePrimary</item>
+        <item name="colorPrimaryDark">@color/bluePrimaryDark</item>
+        <item name="colorAccent">@color/bluePrimary</item>
+    </style>
+    <style name="GreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/greenPrimary</item>
+        <item name="colorPrimaryDark">@color/greenPrimaryDark</item>
+        <item name="colorAccent">@color/greenPrimary</item>
+    </style>
+    <style name="GreyTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/greyPrimary</item>
+        <item name="colorPrimaryDark">@color/greyPrimaryDark</item>
+        <item name="colorAccent">@color/greyPrimary</item>
+    </style>
+    <style name="SalmonTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/salmonPrimary</item>
+        <item name="colorPrimaryDark">@color/salmonPrimaryDark</item>
+        <item name="colorAccent">@color/salmonPrimary</item>
+    </style>
+    <style name="SeaGreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/seagreenPrimary</item>
+        <item name="colorPrimaryDark">@color/seagreenPrimaryDark</item>
+        <item name="colorAccent">@color/seagreenPrimary</item>
+    </style>
+    <style name="RosyBrownTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/rosybrownPrimary</item>
+        <item name="colorPrimaryDark">@color/rosybrownPrimaryDark</item>
+        <item name="colorAccent">@color/rosybrownPrimary</item>
+    </style>
+    <style name="MulberryTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/mulberryPrimary</item>
+        <item name="colorPrimaryDark">@color/mulberryPrimaryDark</item>
+        <item name="colorAccent">@color/mulberryPrimary</item>
+    </style>
+    <style name="WineTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/winePrimary</item>
+        <item name="colorPrimaryDark">@color/winePrimaryDark</item>
+        <item name="colorAccent">@color/winePrimary</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="titleMarginStart">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:transitionName" tools:ignore="NewApi">toolbar</item>
+        <item name="android:titleTextAppearance">@style/ToolbarTextAppearance</item>"
+        <item name="android:subtitleTextAppearance">@style/ToolbarTextAppearance</item>
+        <item name="layout_collapseMode">pin</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="ToolbarTextAppearance">
+        <item name="fontPath">fonts/sans_regular.ttf</item>
+    </style>
+
+    <style name="CollapsedTitleAppearance">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="ExpandedTitleAppearance">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display1</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontPath">@string/sans_bold</item>
+    </style>
+
+    <style name="Toolbar48" parent="Toolbar">
+        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="fontPath">@string/sans_bold</item>
+    </style>
+
+    <style name="MyEditTextTheme">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">#9e9e9e</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent color by default -->
+    </style>
+</resources>

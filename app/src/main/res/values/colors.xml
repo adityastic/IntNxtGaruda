@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#e2136d</color>
+    <color name="bg">#FFFFFF</color>
+
+    <color name="redPrimary">#bf0e37</color>
+    <color name="redPrimaryDark">#8f0a29</color>
+
+    <color name="bluePrimary">#0e749f</color>
+    <color name="bluePrimaryDark">#0b5676</color>
+
+    <color name="greenPrimary">#12b93c</color>
+    <color name="greenPrimaryDark">#0e892d</color>
+
+    <color name="greyPrimary">#7f8181</color>
+    <color name="greyPrimaryDark">#535454</color>
+
+    <color name="salmonPrimary">#FA8072</color>
+    <color name="salmonPrimaryDark">#cc695d</color>
+
+    <color name="seagreenPrimary">#54ff9f</color>
+    <color name="seagreenPrimaryDark">#41c67b</color>
+
+    <color name="rosybrownPrimary">#bc8f8f</color>
+    <color name="rosybrownPrimaryDark">#876767</color>
+
+    <color name="mulberryPrimary">#c54b8c</color>
+    <color name="mulberryPrimaryDark">#94396a</color>
+
+    <color name="winePrimary">#722f37</color>
+    <color name="winePrimaryDark">#56242a</color>
+
+    <color name="md_pink_500">#ffe91e63</color>
+    <color name="md_red_500">#fff44336</color>
+    <color name="md_deep_purple_A700">#ff6200ea</color>
+    <color name="md_blue_A400">#ff2979ff</color>
+</resources>

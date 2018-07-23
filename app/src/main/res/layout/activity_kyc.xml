@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.adityagupta.nxtgaruda.behavior.AppBarLayoutBehavior">
+
+        <!--<com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout-->
+        <!--android:id="@+id/collapseToolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="96dp"-->
+        <!--app:collapsedTitleTextAppearance="@style/CollapsedTitleAppearance"-->
+        <!--app:expandedTitleGravity="top"-->
+        <!--app:expandedTitleMarginStart="16dp"-->
+        <!--app:expandedTitleMarginTop="48dp"-->
+        <!--app:expandedTitleTextAppearance="@style/ExpandedTitleAppearance"-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar48"
+            app:elevation="2dp"
+            app:layout_collapseMode="pin" />
+
+        <!--</com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        android:paddingBottom="0dip"
+        android:paddingLeft="0dip"
+        android:paddingRight="0dip"
+        android:paddingTop="0dip"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <WebView
+            android:id="@+id/msw_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/msw_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="3dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:progressDrawable="@drawable/progress_style"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

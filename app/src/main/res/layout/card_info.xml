@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:id="@+id/LinearAbout"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12.0dip"
+        app:cardElevation="8.0dip"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img"
+                android:scaleType="fitCenter"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12.0dip"
+        app:cardElevation="8.0dip"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_3"
+            android:orientation="vertical"
+            android:padding="8.0dip">
+
+            <TextView
+                android:id="@+id/company"
+                fontPath="@string/sans_bold"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="12.0dip"
+                android:text="Dezire Research"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="#fff" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/md_listitem_height"
+                android:orientation="vertical"
+                android:paddingBottom="8.0dip"
+                android:paddingEnd="16.0dip"
+                android:paddingStart="16.0dip"
+                android:paddingTop="8.0dip">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.85"
+                    android:text="This is Description"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16.0dip"
+        android:text="Made with love by NxtVision"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12.0sp" />
+</LinearLayout>

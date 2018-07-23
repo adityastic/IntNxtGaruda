@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "89695195021",
+    "firebase_url": "https://nxtgaruda-64ff5.firebaseio.com",
+    "project_id": "nxtgaruda-64ff5",
+    "storage_bucket": "nxtgaruda-64ff5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89695195021:android:bc362253497a7e55",
+        "android_client_info": {
+          "package_name": "com.adityagupta.nxtgaruda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89695195021-j637oi2i8mkvkkcgks9ooncbi1ve6586.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adityagupta.nxtgaruda",
+            "certificate_hash": "babde9e70e0181acf322d561bd5fe68a2dc5edfc"
+          }
+        },
+        {
+          "client_id": "89695195021-1j3nqhtrvhees0hkl9va6brba687a78o.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "89695195021-1j3nqhtrvhees0hkl9va6brba687a78o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAFVJHW3C3CjgN_CMwSj1cXe7RcMOoUo0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89695195021-1j3nqhtrvhees0hkl9va6brba687a78o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

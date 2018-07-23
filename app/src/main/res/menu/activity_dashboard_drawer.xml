@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:iconTint="#000000"
+            android:title="Services" />
+        <item
+            android:id="@+id/aboutus"
+            android:iconTint="#000000"
+            android:title="About Us" />
+        <item
+            android:id="@+id/TrackSheet"
+            android:iconTint="#000000"
+            android:title="Tracksheet" />
+        <!--<item-->
+            <!--android:id="@+id/profitcalc"-->
+            <!--android:iconTint="#000000"-->
+            <!--android:title="Profit Calculator" />-->
+        <item
+            android:id="@+id/kyc"
+            android:iconTint="#000000"
+            android:title="KYC" />
+        <item
+            android:id="@+id/rpm"
+            android:iconTint="#000000"
+            android:title="RPM" />
+        <item
+            android:id="@+id/logout"
+            android:iconTint="#000000"
+            android:title="Logout" />
+    </group>
+</menu>
