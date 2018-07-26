@@ -52,7 +52,7 @@ public class TrackSheetListAdapter extends RecyclerView.Adapter<TrackSheetListAd
     @NonNull
     @Override
     public ServicesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ServicesHolder(LayoutInflater.from(context).inflate(R.layout.recycler_services_item, parent, false));
+        return new ServicesHolder(LayoutInflater.from(context).inflate(R.layout.recycler_tracklist_item, parent, false));
     }
 
     boolean downloadComplete;

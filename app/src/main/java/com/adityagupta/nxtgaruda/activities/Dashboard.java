@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adityagupta.nxtgaruda.R;
 import com.adityagupta.nxtgaruda.fragments.AboutUsFragment;
@@ -32,6 +33,7 @@ import com.adityagupta.nxtgaruda.fragments.NewsFragment;
 import com.adityagupta.nxtgaruda.fragments.RPMFragment;
 import com.adityagupta.nxtgaruda.fragments.RecomFragment;
 import com.adityagupta.nxtgaruda.fragments.ServicesFragment;
+import com.adityagupta.nxtgaruda.fragments.ServicesMainFragment;
 import com.adityagupta.nxtgaruda.fragments.TrackSheetFragment;
 import com.adityagupta.nxtgaruda.smartview.WebViewActivity;
 import com.adityagupta.nxtgaruda.utils.Common;
@@ -54,7 +56,7 @@ import static com.adityagupta.nxtgaruda.utils.Common.THEME_SALMON;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_SEAGREEN;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_WINE;
 
-public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Toolbar mToolbar;
     DrawerLayout drawer;
@@ -145,7 +147,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
                 getSupportActionBar().setTitle("Opening Bell");
             }
         } else
-            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesFragment.newInstance()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesMainFragment.newInstance()).addToBackStack(null).commit();
 
         fmenu = findViewById(R.id.menu_red);
         com.github.clans.fab.FloatingActionButton fab1 = findViewById(R.id.fab1);
@@ -156,7 +158,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesFragment.newInstance()).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesMainFragment.newInstance()).addToBackStack(null).commit();
                 getSupportActionBar().setTitle("Services");
                 fmenu.close(true);
             }
@@ -261,7 +263,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         int id = item.getItemId();
 
         if (id == R.id.dashboard) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesFragment.newInstance()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, ServicesMainFragment.newInstance()).addToBackStack(null).commit();
             getSupportActionBar().setTitle("Services");
             fmenu.setVisibility(View.VISIBLE);
         } else if (id == R.id.TrackSheet) {
@@ -290,14 +292,26 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    drawer.closeDrawer(GravityCompat.START,true);
+                    drawer.closeDrawer(GravityCompat.START, true);
                 }
-            },500);
+            }, 500);
             return false;
         } else if (id == R.id.logout) {
             Common.sharedPreferences.edit().remove("Username").apply();
             Common.sharedPreferences.edit().remove("Password").apply();
             this.finishAffinity();
+        } else if (id == R.id.help) {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("message/rfc822");
+            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"adityaofficialgupta@gmail.com"});
+            i.putExtra(Intent.EXTRA_SUBJECT, "");
+            i.putExtra(Intent.EXTRA_TEXT   , "");
+            try {
+                startActivity(Intent.createChooser(i, "Send mail..."));
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+            }
+            return false;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

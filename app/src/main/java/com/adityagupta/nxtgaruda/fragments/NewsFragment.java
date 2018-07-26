@@ -39,7 +39,6 @@ import java.util.Comparator;
 import static com.adityagupta.nxtgaruda.utils.Common.LAYOUT_GRID;
 import static com.adityagupta.nxtgaruda.utils.Common.LAYOUT_LINEAR;
 import static com.adityagupta.nxtgaruda.utils.Common.NEWS_LINK;
-import static com.adityagupta.nxtgaruda.utils.Common.SERVICES_LINK;
 
 public class NewsFragment extends Fragment {
 

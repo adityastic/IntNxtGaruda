@@ -39,15 +39,16 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.Servic
 
     @Override
     public void onBindViewHolder(@NonNull ServicesHolder holder, final int position) {
-        ServicesInfo service = list.get(position);
+        final ServicesInfo service = list.get(position);
 
-        holder.name.setText(service.name);
+        holder.name.setText(service.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, ServiceDescActivity.class);
                 i.putExtra("index", position);
+                i.putExtra("service", service);
                 context.startActivity(i);
             }
         });

@@ -125,12 +125,14 @@ public class ChoosePayment extends AppCompatActivity implements PaymentResultLis
                     Intent i = new Intent(ChoosePayment.this, PayUMoneyWeb.class);
                     i.putExtra("price", amount);
                     i.putExtra("item", item);
+                    i.putExtra("name", getIntent().getStringExtra("name"));
                     startActivity(i);
                 } else {
                     if (checkamount()) {
                         Intent i = new Intent(ChoosePayment.this, PayUMoneyWeb.class);
                         i.putExtra("price", amount);
                         i.putExtra("item", item);
+                        i.putExtra("name", getIntent().getStringExtra("name"));
                         startActivity(i);
                     } else
                         Toast.makeText(ChoosePayment.this, "Enter Amount to Proceed", Toast.LENGTH_SHORT).show();
@@ -194,7 +196,7 @@ public class ChoosePayment extends AppCompatActivity implements PaymentResultLis
                         Common.loginDetails.name,
                         String.valueOf(amount),
                         s,
-                        Common.servicesList.get(index).name,
+                        getIntent().getStringExtra("name"),
                         item
                 ))
                 ,

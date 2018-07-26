@@ -66,6 +66,7 @@ import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.adityagupta.nxtgaruda.utils.Common.KYC_LINK;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_BLUE;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_GREEN;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_GREY;
@@ -89,10 +90,10 @@ public class WebViewActivity extends AppCompatActivity {
     static boolean ASWP_EXTURL = SmartWebView.ASWP_EXTURL;
 
     //Configuration variables
-    private static String ASWV_URL = SmartWebView.ASWV_URL;
+    private static String ASWV_URL;
     private static String ASWV_F_TYPE = SmartWebView.ASWV_F_TYPE;
 
-    public static String ASWV_HOST = aswm_host(ASWV_URL);
+    public static String ASWV_HOST;
 
     //Careful with these variable names if altering
     WebView asw_view;
@@ -190,6 +191,12 @@ public class WebViewActivity extends AppCompatActivity {
     private void setUpToolbar() {
         setTitle("KYC");
         setSupportActionBar(mToolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
@@ -210,7 +217,8 @@ public class WebViewActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         setUpToolbar();
 
-//        ASWV_URL = Uri.parse(ASWV_URL).buildUpon().appendQueryParameter("phone", Common.loginDetails.phone).build().toString();
+        ASWV_URL = Uri.parse(KYC_LINK).buildUpon().appendQueryParameter("number", Common.loginDetails.phone).build().toString();
+        ASWV_HOST =  aswm_host(ASWV_URL);
 
         asw_view = findViewById(R.id.msw_view);
 
@@ -402,7 +410,7 @@ public class WebViewActivity extends AppCompatActivity {
             intent.setData(Uri.parse(url));
             startActivity(intent);
         } else {
-            asw_view.loadUrl(url + "?rid=" + random_id());
+            asw_view.loadUrl(url);
         }
     }
 

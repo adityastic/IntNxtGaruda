@@ -33,4 +33,9 @@
             android:iconTint="#000000"
             android:title="Logout" />
     </group>
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/help"
+            android:title="Help" />
+    </group>
 </menu>

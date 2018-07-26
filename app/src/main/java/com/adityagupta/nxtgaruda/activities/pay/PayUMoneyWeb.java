@@ -207,7 +207,7 @@ public class PayUMoneyWeb extends AppCompatActivity {
                                         Common.loginDetails.name,
                                         String.valueOf(mAmount),
                                         mId,
-                                        Common.servicesList.get(index).name,
+                                        getIntent().getStringExtra("name"),
                                         mProductInfo
                                 ))
                                 ,

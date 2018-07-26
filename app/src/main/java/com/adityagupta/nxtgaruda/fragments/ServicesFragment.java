@@ -1,6 +1,8 @@
 package com.adityagupta.nxtgaruda.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.content.pm.ServiceInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -33,11 +35,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static com.adityagupta.nxtgaruda.utils.Common.LAYOUT_GRID;
 import static com.adityagupta.nxtgaruda.utils.Common.LAYOUT_LINEAR;
-import static com.adityagupta.nxtgaruda.utils.Common.SERVICES_LINK;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_BLUE;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_GREEN;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_GREY;
@@ -48,6 +50,7 @@ import static com.adityagupta.nxtgaruda.utils.Common.THEME_SALMON;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_SEAGREEN;
 import static com.adityagupta.nxtgaruda.utils.Common.THEME_WINE;
 
+@SuppressLint("ValidFragment")
 public class ServicesFragment extends Fragment {
 
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -55,7 +58,13 @@ public class ServicesFragment extends Fragment {
     RecyclerView.LayoutManager recycleLayoutManager;
     ServicesAdapter mAdapter;
 
-    public ServicesFragment() {
+    String json;
+
+    ArrayList<ServicesInfo> list;
+
+    @SuppressLint("ValidFragment")
+    public ServicesFragment(String json) {
+        this.json = json;
     }
 
     @Override
@@ -63,10 +72,6 @@ public class ServicesFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-    }
-
-    public static Fragment newInstance() {
-        return new ServicesFragment();
     }
 
     private void changeLayout() {
@@ -108,15 +113,15 @@ public class ServicesFragment extends Fragment {
         mAdapter = null;
         mRecyclerView.setAdapter(null);
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, SERVICES_LINK, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, json, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.e("JSONDATA", response.toString());
-                Common.servicesList = new ArrayList<>();
+                list = new ArrayList<>();
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject jsonObject = (JSONObject) response.get(i);
-                        Common.servicesList.add(new ServicesInfo(
+                        list.add(new ServicesInfo(
                                 jsonObject.getString("name"),
                                 jsonObject.getString("des"),
                                 Double.parseDouble(jsonObject.getString("monthly")),
@@ -129,7 +134,7 @@ public class ServicesFragment extends Fragment {
                     }
                 }
 
-                mAdapter = new ServicesAdapter(getContext(), Common.servicesList);
+                mAdapter = new ServicesAdapter(getContext(), list);
                 mRecyclerView.setAdapter(mAdapter);
                 mSwipeRefreshLayout.setRefreshing(false);
                 mRecyclerView.setVisibility(View.VISIBLE);

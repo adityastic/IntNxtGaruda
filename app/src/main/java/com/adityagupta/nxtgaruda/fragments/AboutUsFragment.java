@@ -4,6 +4,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,9 +29,11 @@ import static com.adityagupta.nxtgaruda.utils.Common.ABOUTUS_LINK;
 
 public class AboutUsFragment extends Fragment {
 
-    TextView name,desc;
+    TextView name, desc, visiontext, valuetext, missiontext;
     ImageView img;
     LinearLayout about;
+
+    CardView ourMission, ourVission, ourValue;
 
     public AboutUsFragment() {
     }
@@ -55,7 +58,18 @@ public class AboutUsFragment extends Fragment {
         img = view.findViewById(R.id.img);
         about = view.findViewById(R.id.LinearAbout);
 
+        ourMission = view.findViewById(R.id.ourmissionCard);
+        ourValue = view.findViewById(R.id.ourvalueCard);
+        ourVission = view.findViewById(R.id.ourvissionCard);
+        visiontext = view.findViewById(R.id.ourvision);
+        missiontext = view.findViewById(R.id.ourmission);
+        valuetext = view.findViewById(R.id.ourvalue);
+
         about.setVisibility(View.GONE);
+
+        ourMission.setVisibility(View.GONE);
+        ourValue.setVisibility(View.GONE);
+        ourVission.setVisibility(View.GONE);
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
@@ -64,7 +78,7 @@ public class AboutUsFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e("AboutUS",response.toString());
+                        Log.e("AboutUS", response.toString());
                         about.setVisibility(View.VISIBLE);
 
                         try {
@@ -73,6 +87,21 @@ public class AboutUsFragment extends Fragment {
                             Picasso.with(getContext())
                                     .load(response.getString("logo"))
                                     .into(img);
+
+                            if (!response.getString("Ourmission").trim().equals("")) {
+                                missiontext.setText(response.getString("Ourmission"));
+                                ourMission.setVisibility(View.VISIBLE);
+                            }
+                            if (!response.getString("Ourvalue").trim().equals("")) {
+                                valuetext.setText(response.getString("Ourvalue"));
+                                ourValue.setVisibility(View.VISIBLE);
+                            }
+                            if (!response.getString("Ourvision").trim().equals("")) {
+                                visiontext.setText(response.getString("Ourvision"));
+                                ourVission.setVisibility(View.VISIBLE);
+                            }
+
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

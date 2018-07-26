@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.adityagupta.nxtgaruda.R;
 import com.adityagupta.nxtgaruda.adapters.ServicesPriceAdapter;
 import com.adityagupta.nxtgaruda.data.ServicePrice;
+import com.adityagupta.nxtgaruda.data.ServicesInfo;
 import com.adityagupta.nxtgaruda.utils.Common;
 import com.razorpay.Checkout;
 
@@ -70,6 +71,7 @@ public class ServiceDescActivity extends AppCompatActivity {
                 break;
         }
     }
+    ServicesInfo servicesInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +80,14 @@ public class ServiceDescActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service_desc);
 
         index = getIntent().getIntExtra("index", -1);
-
+        servicesInfo = (ServicesInfo) getIntent().getSerializableExtra("service");
+        
         mToolbar = findViewById(R.id.toolbar);
         setUpToolbar();
 
         Checkout.preload(getApplicationContext());
 
-        ((TextView) findViewById(R.id.description)).setText(Common.servicesList.get(index).desc);
+        ((TextView) findViewById(R.id.description)).setText(servicesInfo.getDesc());
 
         mRecyclerView = findViewById(R.id.recyclerView);
         GridLayoutManager gridlayout = new GridLayoutManager(this, 2);
@@ -97,10 +100,10 @@ public class ServiceDescActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(gridlayout);
 
         ArrayList<ServicePrice> list = new ArrayList<>();
-        list.add(new ServicePrice("Monthly:", Common.servicesList.get(index).monthly));
-        list.add(new ServicePrice("Quarterly:", Common.servicesList.get(index).quaterly));
-        list.add(new ServicePrice("Half-Yearly:", Common.servicesList.get(index).hyearly));
-        list.add(new ServicePrice("Yearly:", Common.servicesList.get(index).yearly));
+        list.add(new ServicePrice("Monthly:", servicesInfo.getMonthly()));
+        list.add(new ServicePrice("Quarterly:", servicesInfo.getQuaterly()));
+        list.add(new ServicePrice("Half-Yearly:", servicesInfo.getHyearly()));
+        list.add(new ServicePrice("Yearly:", servicesInfo.getYearly()));
         list.add(new ServicePrice("Custom", -1));
 
         mAdapter = new ServicesPriceAdapter(this, list);
@@ -122,12 +125,13 @@ public class ServiceDescActivity extends AppCompatActivity {
         i.putExtra("item", mAdapter.getSelectedValue().name.substring(0, mAdapter.getSelectedValue().name.length() - 1));
         i.putExtra("price", mAdapter.getSelectedValue().price);
         i.putExtra("index", index);
+        i.putExtra("name", servicesInfo.getName());
         startActivity(i);
         finish();
     }
 
     private void setUpToolbar() {
-        setTitle(Common.servicesList.get(index).name);
+        setTitle(servicesInfo.getName());
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

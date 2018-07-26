@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
+        app:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.adityagupta.nxtgaruda.behavior.AppBarLayoutBehavior">
@@ -28,7 +29,6 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Toolbar48"
-            app:elevation="2dp"
             app:layout_collapseMode="pin" />
 
         <!--</com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout>-->

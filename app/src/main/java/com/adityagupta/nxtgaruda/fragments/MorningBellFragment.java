@@ -104,6 +104,10 @@ public class MorningBellFragment extends Fragment {
                         return o2.date.compareTo(o1.date);
                     }
                 });
+
+                if (Common.morningBellList.size() > 5)
+                    Common.morningBellList = new ArrayList<>(Common.morningBellList.subList(0, 5));
+
                 mAdapter = new RecomAdapter(getContext(), Common.morningBellList);
                 mRecyclerView.setAdapter(mAdapter);
                 mSwipeRefreshLayout.setRefreshing(false);

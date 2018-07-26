@@ -60,11 +60,11 @@ public class Common {
     public static final String VERIFY_LINK = IP + "verify.php?uname=%s";
     public static final String REGISTER_LINK = IP + "registration.php?name=%s&email=%s&number=%s&gender=%s&dob=%s&pass=%s";
     public static final String PAYCOMPLETE_LINK = IP + "payComplete.php?number=%s&name=%s&amount=%s&payid=%s&sname=%s&sterm=%s";
-    public static final String KYC_LINK = "http://192.168.0.66/nxtvision/" + "kyc.php";
+    public static final String KYC_LINK = IP + "kyc.php";
     public static final String TRACKSHEET_NAMES_LINK = IP + "filenames.php";
     public static final String TRACKSHEET_LINK = IP + "upload/";
 
-    public static final String SERVICES_LINK = IP + "APIServices.php";
+    public static final String SERVICES_TAB_LIST = IP + "tabs.json";
     public static final String NEWS_LINK = IP + "news.json";
     public static final String RECOM_LINK = IP + "recom.json";
     public static final String MORNINGBELL_LINK = IP + "morning.json";
@@ -96,7 +96,6 @@ public class Common {
     public static int selectedTheme = THEME_BLUE;
     public static int selectedLayout = LAYOUT_LINEAR;
 
-    public static ArrayList<ServicesInfo> servicesList;
     public static ArrayList<String> tracksheetList;
     public static LoginDetails loginDetails;
     public static SharedPreferences sharedPreferences;
