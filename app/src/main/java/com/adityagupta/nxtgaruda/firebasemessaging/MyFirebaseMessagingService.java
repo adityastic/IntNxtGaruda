@@ -19,7 +19,7 @@ import static com.adityagupta.nxtgaruda.utils.Common.CHANNEL_2_ID;
 import static com.adityagupta.nxtgaruda.utils.Common.notificationManager;
 
 /**
- * Created by NgocTri on 8/9/2016.
+ * Created by aditya.
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
