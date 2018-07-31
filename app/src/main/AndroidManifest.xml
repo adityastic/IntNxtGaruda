@@ -66,6 +66,8 @@
             android:name=".smartview.WebViewActivity"
             android:screenOrientation="portrait" >
         </activity>
+
+        <!--RAZORPAY META INFO-->
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_live_JiOWr2BIc0BFya" />

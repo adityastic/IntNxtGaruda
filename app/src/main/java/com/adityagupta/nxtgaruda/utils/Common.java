@@ -53,7 +53,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Common {
-    public static final String IP = "http://nxtgaruda.com/";
+    public static String IP;
 
     public static final String THEME_LINK = IP + "Theme.json";
     public static final String LOGIN_LINK = IP + "login.php?uname=%s&pass=%s";
@@ -73,6 +73,8 @@ public class Common {
 
     public static final String SMS_LINK = "http://sms.suninfolabs.com/api/sendhttp.php?authkey=142371Aix4e8TS5ab89464&mobiles=%s&message=%s&sender=NXTVIS&route=4&country=0";
 
+
+    //PAUMONEY MERCHANT ACCOUNT INFO
     public static final String PAYU_MERCHANTID = "4901198";
     public static final String PAYU_MERCHANTKEY = "2uICKv";
     public static final String PAYU_MERCHANTSALT = "BVShe7B4";

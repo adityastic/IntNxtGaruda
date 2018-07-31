@@ -58,6 +58,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        Common.IP = getResources().getString(R.string.ip_address);
+
         linear = findViewById(R.id.no_internet);
 
         Button b = findViewById(R.id.button);

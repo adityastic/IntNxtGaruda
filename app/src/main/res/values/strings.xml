@@ -2,6 +2,10 @@
     <string name="app_name">NxtGaruda</string>
     <string name="sans_bold" translatable="false">fonts/circular_std_black.otf</string>
 
+
+    /////IP Address of the Server
+    <string name="ip_address">http://nxtgaruda.com/</string>
+
     <string name="password">PASSWORD</string>
     <string name="mobile_no">NUMBER</string>
 
