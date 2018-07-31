@@ -16,7 +16,7 @@
 
 if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
-$target_dir = 'upload/';
+$target_dir = 'sheetfiles/';
 $target_file = $target_dir . basename($_FILES["filepath"]["name"]);
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 

@@ -1,5 +1,5 @@
 <?php
-$dir = "upload";
+$dir = "sheetfiles";
 $arr=array();
 // Open a directory, and read its contents
 if (is_dir($dir)){
