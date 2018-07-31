@@ -1,0 +1,1 @@
+[{"type":"text","hint":"Enter Name","name":"name_person"},{"type":"text","hint":"Enter PAN Number","name":"pan"},{"name":"dropdown","type":"select","hint":"Select Service","value":["Service1","Service2","Service3"]},{"name":"dropdown","type":"select","hint":"Select Gender","value":["Male","Female"]},{"type":"file","hint":"Upload ID Proof","id":"fname","name":"fname"}]
