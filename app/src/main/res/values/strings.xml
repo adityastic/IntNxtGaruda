@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">NxtGaruda</string>
+    <string name="app_name">Trade Nivesh</string>
+    <string name="company_email">info@tradenivesh.com</string>
+
+
     <string name="sans_bold" translatable="false">fonts/circular_std_black.otf</string>
 
-
     /////IP Address of the Server
-    <string name="ip_address">http://nxtgaruda.com/</string>
 
     <string name="password">PASSWORD</string>
     <string name="mobile_no">NUMBER</string>
@@ -38,4 +39,15 @@
     <string name="loc_perm_text">Give this app permission to check your location.</string>
     <string name="loc_perm_more">Please allow this app to know your location for better overall experience.</string>
 
+
+
+    <string name="test">Test</string>
+    <string name="production">Production</string>
+
+    <string-array name="environment_array">
+        <item>@string/test</item>
+        <item>@string/production</item>
+    </string-array>
+    <string name="use_live_key_in_production_environment">Please use your live merchant key in production environment</string>
+    <string name="could_not_receive_data">Could not receive data</string>
 </resources>

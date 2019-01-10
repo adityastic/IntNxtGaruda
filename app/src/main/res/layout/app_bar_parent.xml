@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         app:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.adityagupta.nxtgaruda.behavior.AppBarLayoutBehavior">
+        app:layout_behavior="com.nxtvision.tradenivesh.behavior.AppBarLayoutBehavior">
 
         <!--<com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout-->
         <!--android:id="@+id/collapseToolbar"-->
@@ -26,17 +26,17 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content" />-->
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Toolbar48"
             app:layout_collapseMode="pin" />
 
         <!--</com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout>-->
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:id="@+id/frag_container"
-        android:name="recoveryportal.adityagupta.recoveryportal.Fragments.SearchFragment"
+        android:name="SearchFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
@@ -110,4 +110,4 @@
             fab:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

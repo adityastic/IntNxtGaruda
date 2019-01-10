@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical">
@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:padding="15dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -24,7 +24,7 @@
             android:textColor="#333333"
             android:textSize="17sp" />
 
-        <com.adityagupta.nxtgaruda.views.OTPEditText
+        <com.nxtvision.tradenivesh.views.OTPEditText
             android:id="@+id/custom_unique_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_centerInParent="true"
             android:layout_margin="30dp">
 
-        </com.adityagupta.nxtgaruda.views.OTPEditText>
+        </com.nxtvision.tradenivesh.views.OTPEditText>
 
         <!--<android.support.v7.widget.AppCompatTextView-->
         <!--android:layout_width="wrap_content"-->
@@ -66,7 +66,7 @@
             android:gravity="center"
             android:visibility="gone">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -74,7 +74,7 @@
                 android:textColor="#9e9e9e"
                 android:textSize="13sp" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -84,7 +84,7 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/check"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -98,4 +98,4 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

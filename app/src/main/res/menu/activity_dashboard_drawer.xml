@@ -16,6 +16,10 @@
             android:id="@+id/TrackSheet"
             android:iconTint="#000000"
             android:title="Tracksheet" />
+        <item
+            android:id="@+id/Reports"
+            android:iconTint="#000000"
+            android:title="Reports" />
         <!--<item-->
             <!--android:id="@+id/profitcalc"-->
             <!--android:iconTint="#000000"-->
@@ -36,6 +40,9 @@
     <group android:id="@+id/grp2" android:checkableBehavior="single" >
         <item
             android:id="@+id/help"
-            android:title="Help" />
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/callus"
+            android:title="Call Us" />
     </group>
 </menu>
