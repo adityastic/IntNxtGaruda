@@ -45,7 +45,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String s) {
 
-        if(Common.loginDetails != null) {
+        if (Common.loginDetails != null) {
             JsonObjectRequest request = new JsonObjectRequest(
                     Request.Method.GET,
                     getHTMLString(String.format(
@@ -66,9 +66,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         public void onErrorResponse(VolleyError error) {
                             Log.e("Registration Device ID", "No: " + error.toString());
                         }
-                    }){
+                    }) {
                 @Override
-                public Map<String, String> getHeaders(){
+                public Map<String, String> getHeaders() {
                     Map<String, String> headers = new HashMap<String, String>();
                     headers.put("User-agent", "NxtGARUDA");
                     return headers;
@@ -86,15 +86,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (remoteMessage.getData().size() > 0) {
             Log.e(TAG, "Message data: " + remoteMessage.getData());
+
             String type = "";
             try {
                 JSONObject obj = new JSONObject(remoteMessage.getData().get("message"));
-                type = Common.saveNotification(getApplicationContext(),obj.getString("body"));
-                Log.e("type",type);
+                type = Common.saveNotification(getApplicationContext(), obj.getString("body"));
+                Log.e("type", type);
                 sendNotification(obj.getString("body"), obj.getString("title"), type);
             } catch (JSONException | ParseException e) {
                 e.printStackTrace();
             }
+
         }
 
         if (remoteMessage.getNotification() != null) {
