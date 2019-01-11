@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "1066396331604",
-    "firebase_url": "https://trade-nivesh.firebaseio.com",
-    "project_id": "trade-nivesh",
-    "storage_bucket": "trade-nivesh.appspot.com"
+    "project_number": "766264624538",
+    "firebase_url": "https://capital-star.firebaseio.com",
+    "project_id": "capital-star",
+    "storage_bucket": "capital-star.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1066396331604:android:8a1761ae8b25e25e",
+        "mobilesdk_app_id": "1:766264624538:android:fd0cc05ac96abfb8",
         "android_client_info": {
-          "package_name": "com.nxtvision.tradenivesh"
+          "package_name": "com.nxtvision.capitalstar"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1066396331604-ev4b0s0te1frj3i7fvtp02gar3mtf8o0.apps.googleusercontent.com",
+          "client_id": "766264624538-g01g8hilt3ndbb5e4l6m86inuecdca2i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASB4EVzLyYzvbEZhChCgL8uw43QuKuvS4"
+          "current_key": "AIzaSyCBdXSDYoBghHPLMqnsQtUhjcBE0DokDwM"
         }
       ],
       "services": {

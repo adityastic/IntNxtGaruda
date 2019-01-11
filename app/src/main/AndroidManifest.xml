@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.nxtvision.tradenivesh">
+    package="com.nxtvision.capitalstar">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name=".application.ApplicationActivity"
+        android:name="com.nxtvision.capitalstar.application.ApplicationActivity"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -25,11 +25,11 @@
         tools:replace="android:allowBackup"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
         <activity
-            android:name=".activities.Dashboard"
+            android:name="com.nxtvision.capitalstar.activities.Dashboard"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activities.SplashScreen"
+            android:name="com.nxtvision.capitalstar.activities.SplashScreen"
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,14 +38,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ServiceDescActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name="com.nxtvision.capitalstar.activities.ServiceDescActivity" />
+        <activity android:name="com.nxtvision.capitalstar.activities.LoginActivity" />
+        <activity android:name="com.nxtvision.capitalstar.activities.RegisterActivity" />
 
         <!--Payment Activities-->
-        <activity android:name=".activities.ChoosePayment"></activity>
-        <activity android:name=".activities.pay.PayUMoneyWeb"></activity>
-        <activity android:name=".activities.pay.PayUBiz">
+        <activity android:name="com.nxtvision.capitalstar.activities.ChoosePayment"></activity>
+        <activity android:name="com.nxtvision.capitalstar.activities.pay.PayUMoneyWeb"></activity>
+        <activity android:name="com.nxtvision.capitalstar.activities.pay.PayUBiz">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -54,21 +54,21 @@
         </activity>
 
 
-        <activity android:name=".activities.PasswordActivity"></activity>
+        <activity android:name="com.nxtvision.capitalstar.activities.PasswordActivity"></activity>
         <activity
             android:name="com.thefinestartist.finestwebview.FinestWebViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/FinestWebViewTheme.Light" />
 
-        <service android:name=".firebasemessaging.MyFirebaseMessagingService">
+        <service android:name="com.nxtvision.capitalstar.firebasemessaging.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name=".smartview.WebViewActivity"
+            android:name="com.nxtvision.capitalstar.smartview.WebViewActivity"
             android:screenOrientation="portrait" >
         </activity>
 
@@ -79,7 +79,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.nxtvision.tradenivesh.provider"
+            android:authorities="com.nxtvision.capitalstar.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -24,7 +24,7 @@
             android:textColor="#333333"
             android:textSize="17sp" />
 
-        <com.nxtvision.tradenivesh.views.OTPEditText
+        <com.nxtvision.capitalstar.views.OTPEditText
             android:id="@+id/custom_unique_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_centerInParent="true"
             android:layout_margin="30dp">
 
-        </com.nxtvision.tradenivesh.views.OTPEditText>
+        </com.nxtvision.capitalstar.views.OTPEditText>
 
         <!--<android.support.v7.widget.AppCompatTextView-->
         <!--android:layout_width="wrap_content"-->

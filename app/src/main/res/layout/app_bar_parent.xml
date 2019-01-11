@@ -9,7 +9,7 @@
         app:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.nxtvision.tradenivesh.behavior.AppBarLayoutBehavior">
+        app:layout_behavior="com.nxtvision.capitalstar.behavior.AppBarLayoutBehavior">
 
         <!--<com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout-->
         <!--android:id="@+id/collapseToolbar"-->
@@ -94,6 +94,19 @@
             fab:fab_colorPressed="?colorPrimary"
             fab:fab_colorRipple="#50ffffff"
             fab:fab_label="Recommendations"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_star"
+            android:tint="#ffffff"
+            fab:fab_colorNormal="?colorPrimary"
+            fab:fab_colorPressed="?colorPrimary"
+            fab:fab_colorRipple="#50ffffff"
+            fab:fab_label="Panel"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton

@@ -7,7 +7,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.nxtvision.tradenivesh.behavior.AppBarLayoutBehavior">
+        app:layout_behavior="com.nxtvision.capitalstar.behavior.AppBarLayoutBehavior">
 
         <!--<com.adityagupta.intern1.views.SansFontCollapsingToolbarLayout-->
         <!--android:id="@+id/collapseToolbar"-->
