@@ -131,6 +131,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_dashboard);
 
         createFirebaseMessagingInit();
+        Common.enableAutoStart(this);
 
         mToolbar = findViewById(R.id.toolbar);
         setUpToolbar();
@@ -259,7 +260,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     }
 
     public void changeFABMENU() {
-        final FloatingActionMenu fam = (FloatingActionMenu) findViewById(R.id.menu_red);
+        final FloatingActionMenu fam = findViewById(R.id.menu_red);
         fam.getMenuIconView().setImageResource(R.drawable.ic_menu);
         AnimatorSet set = new AnimatorSet();
 

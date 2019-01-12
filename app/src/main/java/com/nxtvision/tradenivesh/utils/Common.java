@@ -1,13 +1,16 @@
 package com.nxtvision.tradenivesh.utils;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Handler;
 
 import androidx.core.app.NotificationManagerCompat;
@@ -70,7 +73,7 @@ public class Common {
 
     //PAUMONEY MERCHANT ACCOUNT INFO
     public static final String PAYU_HASHLINK = IP + "getHash.php";
-//    public static final String PAYU_MERCHANTID = "4901198";
+    //    public static final String PAYU_MERCHANTID = "4901198";
     public static final String PAYU_MERCHANTKEY = "T75sZw";
     public static final String PAYU_MERCHANTSALT = "vAoWMOY0";
 
@@ -142,7 +145,7 @@ public class Common {
                             String.format(
                                     SMS_LINK,
                                     number,
-                                    "Your Login OTP For "+context.getResources().getString(R.string.app_name)+"-App is " + OTP
+                                    "Your Login OTP For " + context.getResources().getString(R.string.app_name) + "-App is " + OTP
                             )
                     ),
                     new Response.Listener<String>() {
@@ -204,20 +207,20 @@ public class Common {
 
     }
 
-    public static String saveNotification(Context context,String title) throws JSONException, ParseException {
+    public static String saveNotification(Context context, String title) throws JSONException, ParseException {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
-        Log.e("Notification","<<<<<<<<<<<>>>>>>>>>>>");
-        Log.e("Notification","Recieved");
-        Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-        Log.e("Morning",sharedPreferences.getString("morning", ""));
-        Log.e("Recom",sharedPreferences.getString("recom", ""));
+        Log.e("Notification", "<<<<<<<<<<<>>>>>>>>>>>");
+        Log.e("Notification", "Recieved");
+        Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+        Log.e("Morning", sharedPreferences.getString("morning", ""));
+        Log.e("Recom", sharedPreferences.getString("recom", ""));
         if (sharedPreferences.getString("last_update", "").equals("")) {
-            Log.e("Notification","First Time");
-            Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-            Log.e("Morning",sharedPreferences.getString("morning", ""));
-            Log.e("Recom",sharedPreferences.getString("recom", ""));
+            Log.e("Notification", "First Time");
+            Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+            Log.e("Morning", sharedPreferences.getString("morning", ""));
+            Log.e("Recom", sharedPreferences.getString("recom", ""));
             sharedPreferences.edit().putString("last_update", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime())).apply();
 
             JSONArray array = new JSONArray(sharedPreferences.getString("morning", "[]"));
@@ -232,10 +235,10 @@ public class Common {
             array.put(jsonObject);
 
             sharedPreferences.edit().putString("morning", array.toString()).apply();
-            Log.e("Notification","First Time After");
-            Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-            Log.e("Morning",sharedPreferences.getString("morning", ""));
-            Log.e("Recom",sharedPreferences.getString("recom", ""));
+            Log.e("Notification", "First Time After");
+            Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+            Log.e("Morning", sharedPreferences.getString("morning", ""));
+            Log.e("Recom", sharedPreferences.getString("recom", ""));
             return "morning";
         } else {
             Calendar cal1 = Calendar.getInstance();
@@ -246,10 +249,10 @@ public class Common {
                     cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR);
             String res;
             if (sameDay) {
-                Log.e("Notification","NFT SameDay");
-                Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-                Log.e("Morning",sharedPreferences.getString("morning", ""));
-                Log.e("Recom",sharedPreferences.getString("recom", ""));
+                Log.e("Notification", "NFT SameDay");
+                Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+                Log.e("Morning", sharedPreferences.getString("morning", ""));
+                Log.e("Recom", sharedPreferences.getString("recom", ""));
                 JSONArray array = new JSONArray(sharedPreferences.getString("recom", "[]"));
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("title", title);
@@ -264,10 +267,10 @@ public class Common {
                 sharedPreferences.edit().putString("recom", array.toString()).apply();
                 res = "recommendation";
             } else {
-                Log.e("Notification","NFT NotSameDay");
-                Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-                Log.e("Morning",sharedPreferences.getString("morning", ""));
-                Log.e("Recom",sharedPreferences.getString("recom", ""));
+                Log.e("Notification", "NFT NotSameDay");
+                Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+                Log.e("Morning", sharedPreferences.getString("morning", ""));
+                Log.e("Recom", sharedPreferences.getString("recom", ""));
                 JSONArray array = new JSONArray(sharedPreferences.getString("morning", "[]"));
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("title", title);
@@ -283,13 +286,107 @@ public class Common {
                 res = "morning";
             }
             sharedPreferences.edit().putString("last_update", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime())).apply();
-            Log.e("Notification","Not Time After");
-            Log.e("Last Update",sharedPreferences.getString("last_update", ""));
-            Log.e("Morning",sharedPreferences.getString("morning", ""));
-            Log.e("Recom",sharedPreferences.getString("recom", ""));
+            Log.e("Notification", "Not Time After");
+            Log.e("Last Update", sharedPreferences.getString("last_update", ""));
+            Log.e("Morning", sharedPreferences.getString("morning", ""));
+            Log.e("Recom", sharedPreferences.getString("recom", ""));
             return res;
         }
+    }
 
+    public static void enableAutoStart(final Context context) {
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (sharedPreferences.getBoolean("dontallow", true)) {
+            AlertDialog dialog;
+            final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+            alertDialog.setTitle("Enable AutoStart");
+            alertDialog.setMessage("Please allow us to always run in the background,else our services can't be accessed when you are in distress");
+            alertDialog.setCancelable(false);
+
+            alertDialog.setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+
+                    if (Build.BRAND.equalsIgnoreCase("xiaomi")) {
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.miui.securitycenter",
+                                "com.miui.permcenter.autostart.AutoStartManagementActivity"));
+                        context.startActivity(intent);
+                    } else if (Build.BRAND.equalsIgnoreCase("Letv")) {
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.letv.android.letvsafe",
+                                "com.letv.android.letvsafe.AutobootManageActivity"));
+                        context.startActivity(intent);
+
+                    } else if (Build.BRAND.equalsIgnoreCase("Honor")) {
+
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.huawei.systemmanager",
+                                "com.huawei.systemmanager.optimize.process.ProtectActivity"));
+                        context.startActivity(intent);
+                    } else if (Build.MANUFACTURER.equalsIgnoreCase("oppo")) {
+                        try {
+                            Intent intent = new Intent();
+                            intent.setClassName("com.coloros.safecenter",
+                                    "com.coloros.safecenter.permission.startup.StartupAppListActivity");
+                            context.startActivity(intent);
+                        } catch (Exception e) {
+                            try {
+                                Intent intent = new Intent();
+                                intent.setClassName("com.oppo.safe",
+                                        "com.oppo.safe.permission.startup.StartupAppListActivity");
+                                context.startActivity(intent);
+                            } catch (Exception ex) {
+                                try {
+                                    Intent intent = new Intent();
+                                    intent.setClassName("com.coloros.safecenter",
+                                            "com.coloros.safecenter.startupapp.StartupAppListActivity");
+                                    context.startActivity(intent);
+                                } catch (Exception exx) {
+
+                                }
+                            }
+                        }
+                    } else if (Build.MANUFACTURER.contains("vivo")) {
+                        try {
+                            Intent intent = new Intent();
+                            intent.setComponent(new ComponentName("com.iqoo.secure",
+                                    "com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity"));
+                            context.startActivity(intent);
+                        } catch (Exception e) {
+                            try {
+                                Intent intent = new Intent();
+                                intent.setComponent(new ComponentName("com.vivo.permissionmanager",
+                                        "com.vivo.permissionmanager.activity.BgStartUpManagerActivity"));
+                                context.startActivity(intent);
+                            } catch (Exception ex) {
+                                try {
+                                    Intent intent = new Intent();
+                                    intent.setClassName("com.iqoo.secure",
+                                            "com.iqoo.secure.ui.phoneoptimize.BgStartUpManager");
+                                    context.startActivity(intent);
+                                } catch (Exception exx) {
+                                    ex.printStackTrace();
+                                }
+                            }
+                        }
+                    }
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialog.setNegativeButton("Dont show again", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    sharedPreferences.edit().putBoolean("dontallow",false);
+                    dialog.dismiss();
+                }
+            });
+
+            dialog = alertDialog.create();
+            dialog.show();
+        }
     }
 
     public interface OTPListener {
