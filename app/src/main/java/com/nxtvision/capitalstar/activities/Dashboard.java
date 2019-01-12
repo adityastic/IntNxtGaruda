@@ -132,6 +132,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_dashboard);
 
         createFirebaseMessagingInit();
+        Common.enableAutoStart(this);
 
         mToolbar = findViewById(R.id.toolbar);
         setUpToolbar();

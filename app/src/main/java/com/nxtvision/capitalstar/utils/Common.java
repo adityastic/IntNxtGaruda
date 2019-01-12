@@ -318,6 +318,101 @@ public class Common {
 
     }
 
+public static void enableAutoStart(final Context context) {
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (sharedPreferences.getBoolean("dontallow", true)) {
+            AlertDialog dialog;
+            final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+            alertDialog.setTitle("Enable AutoStart");
+            alertDialog.setMessage("Please allow us to always run in the background,else our services can't be accessed when you are in distress");
+            alertDialog.setCancelable(false);
+
+            alertDialog.setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+
+                    if (Build.BRAND.equalsIgnoreCase("xiaomi")) {
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.miui.securitycenter",
+                                "com.miui.permcenter.autostart.AutoStartManagementActivity"));
+                        context.startActivity(intent);
+                    } else if (Build.BRAND.equalsIgnoreCase("Letv")) {
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.letv.android.letvsafe",
+                                "com.letv.android.letvsafe.AutobootManageActivity"));
+                        context.startActivity(intent);
+
+                    } else if (Build.BRAND.equalsIgnoreCase("Honor")) {
+
+                        Intent intent = new Intent();
+                        intent.setComponent(new ComponentName("com.huawei.systemmanager",
+                                "com.huawei.systemmanager.optimize.process.ProtectActivity"));
+                        context.startActivity(intent);
+                    } else if (Build.MANUFACTURER.equalsIgnoreCase("oppo")) {
+                        try {
+                            Intent intent = new Intent();
+                            intent.setClassName("com.coloros.safecenter",
+                                    "com.coloros.safecenter.permission.startup.StartupAppListActivity");
+                            context.startActivity(intent);
+                        } catch (Exception e) {
+                            try {
+                                Intent intent = new Intent();
+                                intent.setClassName("com.oppo.safe",
+                                        "com.oppo.safe.permission.startup.StartupAppListActivity");
+                                context.startActivity(intent);
+                            } catch (Exception ex) {
+                                try {
+                                    Intent intent = new Intent();
+                                    intent.setClassName("com.coloros.safecenter",
+                                            "com.coloros.safecenter.startupapp.StartupAppListActivity");
+                                    context.startActivity(intent);
+                                } catch (Exception exx) {
+
+                                }
+                            }
+                        }
+                    } else if (Build.MANUFACTURER.contains("vivo")) {
+                        try {
+                            Intent intent = new Intent();
+                            intent.setComponent(new ComponentName("com.iqoo.secure",
+                                    "com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity"));
+                            context.startActivity(intent);
+                        } catch (Exception e) {
+                            try {
+                                Intent intent = new Intent();
+                                intent.setComponent(new ComponentName("com.vivo.permissionmanager",
+                                        "com.vivo.permissionmanager.activity.BgStartUpManagerActivity"));
+                                context.startActivity(intent);
+                            } catch (Exception ex) {
+                                try {
+                                    Intent intent = new Intent();
+                                    intent.setClassName("com.iqoo.secure",
+                                            "com.iqoo.secure.ui.phoneoptimize.BgStartUpManager");
+                                    context.startActivity(intent);
+                                } catch (Exception exx) {
+                                    ex.printStackTrace();
+                                }
+                            }
+                        }
+                    }
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialog.setNegativeButton("Dont show again", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    sharedPreferences.edit().putBoolean("dontallow",false);
+                    dialog.dismiss();
+                }
+            });
+
+            dialog = alertDialog.create();
+            dialog.show();
+        }
+    }
+    
     public interface OTPListener {
         public void onValid();
 
